@@ -1,0 +1,10 @@
+later:
+highlight the button of the selected page
+
+TODOS:
+                 \
+                 - today 
+create routine   /
+display routines
+edit routine 
+delete routine
