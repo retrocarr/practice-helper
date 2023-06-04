@@ -4,7 +4,16 @@ button,input,textarea,select{font: inherit;color: inherit;border-radius: .5rem; 
 
 body{
     background-color: #569093;
+    ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    input{
+        border-radius: .4em;
+    }
     button{
+        transition: .1s;
         padding: .2rem .5rem;
         border: none;
         border-radius: .3rem;
@@ -78,25 +87,87 @@ nav{background-color: cadetblue;}
 
 
 .routinesPage{
+
+    .routinesList{
+        border-radius: .7em;
+    }
     .newRoutineBtn{
         border-radius: .5em .5em 0 0;
         margin: 0 1rem;
     }
-    .routineData{
-        display: flex;
-        span:first-of-type{
-            font-weight: bold;
-            margin-right: 1em;
+    .routine{
+        background-color: white;
+        border-radius: .5em;
+        padding: 1em;
+        gap: 1em;
+        h2{
+            margin: 0;
         }
-        span:not(:first-of-type){
-            opacity: 40%;
-            margin: 0 .5em;
+        .overview{
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: center;
+            gap: .5em;
+            margin-bottom: 1.5em;
+            justify-content: center;
+            button{min-width: 40px;}
+            button:first-of-type{margin-left: auto;}
         }
+        .routineExerciseData{
+            opacity: 60%;
+            margin-right: auto;
+            display: grid;
+            grid-auto-flow: column;
+            column-gap: .5em;
+            width: 100%;
+            grid-template-columns: repeat(5,1fr);
+            grid-template-rows: repeat(4, 1fr);
+            span{
+                border-radius: .3em;
+                padding: .1em;
+                // elipsis
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                //
+            }
+        }
+    }
+    .newRoutineMenu{
+        gap: 1em;
+        display: grid;
+        padding: 1rem 2em;
+        border-radius: 1rem;
+        background-color: white;
+        border: 2px solid palegoldenrod;
+        width: max-content;
+        .nameInput{display: flex; justify-content: center; align-items: center; gap: .8em;}
+        input{border: 1px solid #00000090;}
+        h4{ margin: 0;}
+        ul{
+            gap: .5em;
+            margin-top: .5em;
+            padding: .5em .7em;
+            padding-left: 0;
+            border-radius: .5em;
+        }
+        li{display: flex; gap: .5em; align-items: center;}
+        li:not(:last-child){margin-bottom: .6em;}
+        .edit{ display: flex; gap: 3em; }
+        .btns{ display: flex; gap: .5em; }
     }
 }
 
 
-
+.modal{
+    background-color: #80808070;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items:     center;
+    inset: 0;
+    z-index: 100;
+}
 .dataList{
     background-color: #d3d3d3;
     border-radius: .3em;

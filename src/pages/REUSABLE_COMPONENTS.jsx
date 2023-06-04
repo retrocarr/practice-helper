@@ -1,5 +1,14 @@
 import { useRef } from "react"
 
+export function ConfirmMenu({text, callBackIfYes, callBackIfNo}) {
+  return <div className='confirmMenu'>
+    <div>
+      <p>{text.warningText}</p>
+      <button onClick={callBackIfNo}>{text.cancelBtnText}</button>
+      <button onClick={callBackIfYes}>{text.confirmBtnText}</button>
+    </div>
+  </div> // =========================>
+}
 export function ExerciseInputFields({exerciseObject, passedStateMethod}) {
   const check = (typeof exerciseObject === 'object')? true : ''
   // #region refs

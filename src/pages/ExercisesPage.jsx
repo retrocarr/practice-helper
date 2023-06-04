@@ -5,7 +5,7 @@ import { objectsAreEqual } from "../jsFunctions";
 import { AiFillDelete } from "react-icons/ai";
 import { MdEdit, MdEditOff } from "react-icons/md";
 // components 
-import { DelEditContainer, ExerciseInputFields } from "./REUSABLE_COMPONENTS";
+import { DelEditContainer, ExerciseInputFields, ConfirmMenu } from "./REUSABLE_COMPONENTS";
 
 // exerciseObject exemple:
 // {name:#, description:#, stat:#, minutes:#, seconds:#}
@@ -21,16 +21,6 @@ function allRequiredInputsAreFilled(exerciseObject) {
         }
     }
     return flag
-}
-
-export function ConfirmMenu({text, callBackIfYes, callBackIfNo}) {
-  return <div className='confirmMenu'>
-    <div>
-      <p>{text.warningText}</p>
-      <button onClick={callBackIfNo}>{text.cancelBtnText}</button>
-      <button onClick={callBackIfYes}>{text.confirmBtnText}</button>
-    </div>
-  </div> // =========================>
 }
 
 export function CreateMenu({visible, setVisible}) {

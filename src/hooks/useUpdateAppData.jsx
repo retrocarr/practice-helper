@@ -89,10 +89,37 @@ export function useUpdateAppData() {
     const [appData, dispatch] = useReducer(appDataReducer, {
         routines:[
             { name:'routine 1', isActive:false,
-                exercises:['riff', 'stretch']
+                exercises:[
+                    'riff', 
+                    'stretch1',
+                    'stretch2',
+                    'stretch3',
+                    'stretch4',
+                    'stretch5',
+                    'stretch6',
+                    'stretch7sssssssssssss',
+                    'stretch8',
+                    'stretch9',
+                    'stretch10',
+                    'stretch11',
+                    'stretch12',
+                    'stretch13',
+                    'stretch14',
+                    'stretch15',
+                    'stretch16',
+                    'stretch17',
+                    'stretch18',
+                ]
             }
         ],
         exercises:[
+            {
+                name:'oh pretty woman',
+                description:'sequi, porro dolore aliquid saepe?',
+                stat:'',
+                minutes:'4',
+                seconds:'30'
+            },
             {
                 name:'riff',
                 description:'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur, quia sint. Fugiat, itaque. Similique, voluptas minima. Excepturi alias voluptatem incidunt sequi, porro dolore aliquid saepe?',
