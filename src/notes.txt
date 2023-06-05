@@ -5,6 +5,5 @@ TODOS:
                  \
                  - today 
 create routine   /
-display routines
 edit routine 
 delete routine

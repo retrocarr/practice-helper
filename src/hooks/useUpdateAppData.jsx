@@ -11,6 +11,7 @@ export function appDataReducer(state, action) {
         };break
         // ----------------------<
         // exercise list actions-<
+
         case 'NEW_EXERCISE':{ // payload: exercise object
             const exercise = action.payload
 
@@ -74,9 +75,24 @@ export function appDataReducer(state, action) {
         // ----------------------<
         // routine actions ------<
 
+        case 'NEW_ROUTINE':{ // payload: routineObject
+            const routine = action.payload
+            const stateCopy = {...state}
+            stateCopy.routines = [routine, ...stateCopy.routines]
+            // stateCopy.routines.push(action.payload)
+            return stateCopy
+        };break
+        case 'DELETE_ROUTINE':{ // payload: routine name
+            let stateCopy = {...state} // copy original state
+            const filteredStateCopy = stateCopy.routines.filter((routine)=>
+                routine.name !== action.payload
+            )
+            stateCopy = {routines:filteredStateCopy, exercises:stateCopy.routines}
+            return stateCopy
+        };break
         // ----------------------<
         default:
-            throw Error('ACTION DOSNT EXIST DAMN IT: ' + action.type)
+            throw Error('ACTION DOSNT EXIST: ' + action.type)
     }
 }
 // this hooks manages all the app data.

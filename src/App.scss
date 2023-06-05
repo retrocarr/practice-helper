@@ -143,7 +143,7 @@ nav{background-color: cadetblue;}
         width: max-content;
         .nameInput{display: flex; justify-content: center; align-items: center; gap: .8em;}
         input{border: 1px solid #00000090;}
-        h4{ margin: 0;}
+        h4{ margin: 0; }
         ul{
             gap: .5em;
             margin-top: .5em;
@@ -151,15 +151,25 @@ nav{background-color: cadetblue;}
             padding-left: 0;
             border-radius: .5em;
         }
-        li{display: flex; gap: .5em; align-items: center;}
-        li:not(:last-child){margin-bottom: .6em;}
+        li{
+            display: flex; 
+            gap: .5em; 
+            align-items: center; 
+            border-radius: .5em;
+            padding-right: .5em;
+            button{font-weight: bolder;}
+        }
+        li:nth-of-type(even){
+            background-color: #eee8aa60;
+        }
+        li:not(:last-child){margin-bottom: .2em;}
         .edit{ display: flex; gap: 3em; }
         .btns{ display: flex; gap: .5em; }
     }
 }
 
 
-.modal{
+.backdrop{
     background-color: #80808070;
     position: absolute;
     display: flex;

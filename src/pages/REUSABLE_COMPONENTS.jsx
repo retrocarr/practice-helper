@@ -1,5 +1,10 @@
 import { useRef } from "react"
 
+export function Backdrop({children}) {
+  return <div className='backdrop'>
+    {children}
+  </div> // ===================>
+}
 export function ConfirmMenu({text, callBackIfYes, callBackIfNo}) {
   return <div className='confirmMenu'>
     <div>
