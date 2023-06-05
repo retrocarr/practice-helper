@@ -29,6 +29,7 @@ function Routine({routineObject}) {
   const {dispatch} = useContext(pageCtx)
   const {name} = routineObject
   const [confirmMenu, setConfirmMenu] = useState(null)
+  const [editRoutineMenu, setEditRoutineMenu] = useState(null)
   function deleteRoutine() {
     setConfirmMenu(<ConfirmMenu
       text={{
@@ -45,16 +46,31 @@ function Routine({routineObject}) {
       }}
     />)
   }
+  function activateRoutine() {
+    dispatch({
+      type:'ACTIVATE_ROUTINE',
+      payload:routineObject.name
+    })
+  }
+  function openEditMenu() {
+  }
   return <div className='routine'>
+  
     <div className="overview">
       <h2>{name}</h2>
-      <button>Set as Active Routine</button>
-      {/* todo: */}
+
+      {
+        (!routineObject.isActive)?
+        <button className="activateBtn" onClick={activateRoutine}>Set as active Routine</button>
+        : <button disabled id="active">Active</button>
+      }
+
       <button><MdEdit/></button>
       <button onClick={deleteRoutine}><AiFillDelete/></button>
     </div>
     <RoutineExerciseData routineObject={routineObject} />
     {confirmMenu}
+    {editRoutineMenu}
   </div> // =====================>
 }
 function RoutinesList() {

@@ -100,6 +100,11 @@ nav{background-color: cadetblue;}
         border-radius: .5em;
         padding: 1em;
         gap: 1em;
+        // TODO: scale with vw
+        #active{
+            background-color: #ffeb80;
+            &:hover{cursor: default;}
+        }
         h2{
             margin: 0;
         }
@@ -110,6 +115,7 @@ nav{background-color: cadetblue;}
             gap: .5em;
             margin-bottom: 1.5em;
             justify-content: center;
+            .activateBtn{min-width: 100px;}
             button{min-width: 40px;}
             button:first-of-type{margin-left: auto;}
         }

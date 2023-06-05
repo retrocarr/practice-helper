@@ -90,6 +90,16 @@ export function appDataReducer(state, action) {
             stateCopy = {routines:filteredStateCopy, exercises:stateCopy.routines}
             return stateCopy
         };break
+        case 'ACTIVATE_ROUTINE':{ // payload: routine name
+            let stateCopy = {...state} // copy original state
+            stateCopy.routines.forEach(routine => { // deactivate all routines
+                routine.isActive = false
+            })
+            stateCopy.routines.forEach(routine => { // activate routine from given name
+                if (routine.name === action.payload) routine.isActive = true
+            });
+            return stateCopy
+        };break
         // ----------------------<
         default:
             throw Error('ACTION DOSNT EXIST: ' + action.type)
